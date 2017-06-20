@@ -1,0 +1,90 @@
+allabetyg=[]                                                            
+   ...: i=1                                                                     
+   ...: linje=""                                                                
+   ...: linjeval= 0                                                             
+   ...: #linjerna säger vilka ämnen som försvinner. 1 är nat, 2 nat-sam och 3 sa
+   ...: m                                                                       
+   ...: linje1=""                                                               
+   ...: linje2=""                                                               
+   ...: linje3=""                                                               
+   ...:                                                                         
+   ...: instruk0="Skriv in vilken linje du har. Skriv antingen 'nat','nat-sam' e
+   ...: ller'sam': "                                                            
+   ...: instruk ="Skriv in betygen i ordningen de är skrivna i betygspappret, äv
+   ...: en om ämnet inte räknas för ditt svenska betyg (glöm inte att betygen i 
+   ...: svenska och tyska egentligen kan vara  annorlunda än det som är skrivet 
+   ...: i pappret. Skriv in de 'riktiga' betygen i de fallen). För ämnen du inte
+   ...:  har, när det är tomt i betyget, skriv in en nolla ('0')."  
+In [1]: ins = 0                                                                 
+   ...: summa = 0                                                               
+   ...: resultat = 0                                                            
+   ...: while 1:                                                                
+   ...:     if linjeval == 0:                                                   
+   ...:         linje=raw_input(instruk0)                                       
+   ...:         if linje== "nat" or linje == "nat-sam" or linje == "sam":       
+   ...:             linjeval = linjeval+1                                       
+   ...:             if ins == 0:                                                
+   ...:                 print instruk                                           
+   ...:                 ins = ins+1                                             
+   ...:         else:                                                           
+   ...:             print "Oj! Det blev lite fel. Skriv exakt 'nat', 'nat-sam' e
+   ...: ller 'sam'!"                                                            
+   ...:     elif linjeval > 0:                                                  
+   ...:                 betyg=raw_input("Skriv in betyg %i:"%i)                 
+   ...:                 try:                                                    
+   ...:                     betyg = int(betyg)                                  
+   ...:                 except ValueError:                                      
+   ...:                    print allabetyg                                      
+   ...:                    antalbet=0                                           
+   ...:                    antalbet =len(allabetyg)                             
+   ...:                    resultat =summa/antalbet                             
+   ...:                    print "Ditt betygssnitt är = "+ str(resultat)        
+   ...:                    if linje == "nat":                                   
+   ...:                        print "Däremot är det viktiga vad som räknas för 
+   ...: din linje. Din linje är "+linje+". Därför försvinner vissa ämnen i uträk
+   ...: ningen. För dig är dessa ämnen: "+linje1                                
+   ...:                    elif linje == "nat-sam":                             
+   ...:                         print "Däremot är det viktiga vad som räknas för
+   ...:  din linje. Din linje är "+linje+". Därför försvinner vissa ämnen i uträ
+   ...: kningen. För dig är dessa ämnen: "+linje2                               
+   ...:                    elif linje == "sam":                                 
+   ...:                        print "Däremot är det viktiga vad som räknas för 
+   ...: din linje. Din linje är "+linje+". Därför försvinner vissa ämnen i uträk
+   ...: ningen. För dig är dessa ämnen: "+linje3                                
+   ...:                    print "Räknar man med meritpoäng (2,5) har du "+str(r
+   ...: esultat+2.5)+ ". Högsta möjliga är 22.5"                                
+   ...:                    if resultat + 2.5 == 22.5:                           
+   ...:                        print "Grattis! Du är skitbra, men sluta ljuga nu
+   ...:  ;)"                                                                    
+   ...:                    print linje                                          
+   ...:                    break                          
+   ...:                 else:                                                   
+   ...:                     i=i+1                                               
+   ...:                     if betyg < 16 and betyg >12:  
+   ...:                         betyg ="A"                                      
+   ...:                         allabetyg.append(betyg)  
+
+In [1]:                         summa = summa+20.0
+   ...:                         print allabetyg
+   ...:                     elif betyg < 13 and betyg > 9:
+   ...:                         betyg ="B"
+   ...:                         allabetyg.append(betyg)
+   ...:                         summa = summa + 17.5
+   ...:                         print allabetyg
+   ...:                     elif betyg < 10 and betyg > 6:
+   ...:                         betyg = "C"
+   ...:                         allabetyg.append(betyg)
+   ...:                         summa = summa + 15.0
+   ...:                         print allabetyg
+   ...:                     elif betyg < 7 and betyg > 3:
+   ...:                         betyg ="D"
+   ...:                         allabetyg.append(betyg)
+   ...:                         summa = summa + 12.5    
+   ...:                         print allabetyg
+   ...:                     elif betyg < 4 and betyg >0:
+   ...:                         betyg = "E"
+   ...:                         allabetyg.append(betyg)
+   ...:                         summa=summa+10.0
+   ...:                         print allabetyg
+   ...:                     else:
+   ...:                         print allabetyg
